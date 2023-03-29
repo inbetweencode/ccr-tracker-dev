@@ -26,9 +26,9 @@
   document.write(
     '<iframe class="lazy lazy-hidden" id="cbdc-tracker"  data-lazy-type="iframe" src="frame.html' +
       params +
-      '" style="width: 1px;min-width: 100%;border: none"></iframe><noscript><iframe id="cbdc-tracker" src="frame.html' +
+      '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe><noscript><iframe id="cbdc-tracker" src="frame.html' +
       params +
-      '" style="width: 1px;min-width: 100%;border: none"></iframe></noscript>'
+      '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe></noscript>'
   );
   let iframe = document.querySelector("#cbdc-tracker");
   window.addEventListener(
