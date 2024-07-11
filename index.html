@@ -14,6 +14,10 @@
       iframe {
         max-width: 100%;
       }
+      .cbdc-cbp {
+        max-width: 1310px;
+        width: 100%;
+      }
       
       
     </style>
@@ -21,12 +25,16 @@
 
   <body>
 
+
+
+
+  <div class="cbdc">
 <script>
   const params = window.location.search;
   document.write(
-    '<iframe class="lazy lazy-hidden" id="cbdc-tracker"  data-lazy-type="iframe" src="frame.html' +
+    '<iframe class="lazy lazy-hidden" id="cbdc-tracker"  data-lazy-type="iframe" src="https://inbetweencode.github.io/cbdc-tracker-2023/' +
       params +
-      '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe><noscript><iframe id="cbdc-tracker" src="frame.html' +
+      '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe><noscript><iframe id="cbdc-tracker" src="https://inbetweencode.github.io/cbdc-tracker-2023/' +
       params +
       '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe></noscript>'
   );
@@ -41,6 +49,34 @@
     false
   );
 </script>
+  </div>
+
+
+  <div class="cbdc-cbp">
+    <script>
+      const params = window.location.search;
+      document.write(
+              '<iframe class="lazy lazy-hidden" id="cbdc-tracker"  data-lazy-type="iframe" src="frame.html' +
+              params +
+              '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe><noscript><iframe id="cbdc-tracker" src="frame.html' +
+              params +
+              '" scrolling="no" style="width: 1px;min-width: 100%;border: none"></iframe></noscript>'
+      );
+      let iframe = document.querySelector("#cbdc-tracker");
+      window.addEventListener(
+              "message",
+              function (e) {
+                let message = e.data;
+                iframe.style.height = message.height + "px";
+                iframe.style.width = message.width + "px";
+              },
+              false
+      );
+    </script>
+  </div>
+
+
+
 
   </body>
 </html>
